@@ -1,25 +1,17 @@
 /* eslint-disable react/style-prop-object */
-import { StyleSheet, Text, View } from 'react-native'
-
 import { StatusBar } from 'expo-status-bar'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import { NativeBaseProvider } from 'native-base'
+
+import { Home } from '@pages/Home'
 
 export function AppSrc() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <View style={styles.container}>
-        <Text>Open up src/index.tsx to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </View>
+      <NativeBaseProvider>
+        <Home />
+      </NativeBaseProvider>
+      <StatusBar style="auto" />
     </GestureHandlerRootView>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})
